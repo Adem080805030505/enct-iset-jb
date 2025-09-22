@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enactus ISET Djerba</title>
+
+  <!-- Favicon / Page Logo -->
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <style>
+    /* Reset */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #FFD600, #000000);
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 50px;
+      animation: fadeIn 2s ease-in-out;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Button Container */
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 280px;
+    }
+
+    /* Main Buttons */
+    .btn {
+      padding: 15px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #000;
+      color: #FFD600;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover {
+      background: #FFD600;
+      color: #000;
+      transform: scale(1.08);
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.4);
+    }
+
+    /* Submenu */
+    .submenu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      animation: slideDown 0.5s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .submenu .btn {
+      font-size: 1rem;
+      background: #fff;
+      color: #000;
+      border: 2px solid #FFD600;
+    }
+
+    .submenu .btn:hover {
+      background: #FFD600;
+      color: #000;
+    }
+     header {
+  display: flex;
+  justify-content: center; /* center logo horizontally */
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #FFD600, #000000);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo container for better control */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo image */
+header img {
+  height: 70px; /* larger and professional size */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  border-radius: 12px; /* rounded corners for smooth look */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Logo hover effect */
+header img:hover {
+  transform: scale(1.1) rotate(2deg); /* slight rotation + zoom */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header img {
+    height: 50px;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+  <!-- Logo centered with subtle animation -->
+  <div class="logo-container">
+    <img src="logo.png" alt="Enactus ISET Djerba Logo">
+  </div>
+</header>
+
+  <h1>Welcome to Enactus ISET Djerba</h1>
+  
+  <div class="button-container">
+    <!-- Social Media Button -->
+    <button class="btn" onclick="toggleMenu('social')">🌐 Social Media</button>
+    <div id="social" class="submenu">
+      <a class="btn" href="https://www.instagram.com/enactus_isetdjerba?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+      <a class="btn" href="https://www.facebook.com/share/1FJ2uQbu39/" target="_blank">Facebook</a>
+      <a class="btn" href="https://tiktok.com" target="_blank">TikTok</a>
+    </div>
+
+    <!-- About Us Button -->
+    <button class="btn" onclick="toggleMenu('about')">📄 About Us</button>
+    <div id="about" class="submenu">
+      <a class="btn" href="Enactus Tunisie - Parcours Equipe 2025-2026.pdf" target="_blank">Enactus Plan</a>
+      <a class="btn" href="https://vm.tiktok.com/ZMHW1CPJUDMP6-8Aatz/" target="_blank">What We Do</a>
+    </div>
+
+    <!-- Recruitment Form -->
+    <a class="btn" href="https://tally.so/r/wbPxL6" target="_blank">📝 Recruitment Form</a>
+  </div>
+
+  <script>
+    function toggleMenu(id) {
+      const menu = document.getElementById(id);
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
+</body>
+</html>
